@@ -402,6 +402,7 @@ footer {
 }
 
 /* --- REGRAS GLOBAIS PARA CELULAR --- */
+/* --- REGRAS GLOBAIS PARA CELULAR (CORRIGIDO) --- */
 @media (max-width: 768px) {
     
     /* Ajusta os containers para não colarem na borda */
@@ -429,55 +430,60 @@ footer {
         min-width: 450px;
     }
 
-    /* CORREÇÃO DO MENU RESPONSIVO: Transforma em Dropdown Absoluto */
+    /* ESTRUTURA DO MENU FLUTUANTE */
+    nav {
+        position: sticky;
+        top: 0;
+    }
+
     .nav-container {
-        flex-direction: row; /* Cancela o empilhamento antigo vertical */
-        justify-content: flex-end; /* Empurra o botão ☰ para o canto direito */
+        flex-direction: row !important; /* Força os elementos na horizontal */
+        justify-content: flex-end !important; /* Empurra o botão ☰ totalmente para a direita */
         padding: 5px 0 !important;
+        position: relative; /* Serve de âncora para o menu de links */
     }
 
     .menu-hamburguer {
-        display: block; /* Faz o botão ☰ aparecer apenas no celular */
+        display: block !important; /* Faz o botão ☰ aparecer obrigatoriamente no celular */
     }
 
     #nav-menu {
-        display: none; /* Esconde a lista original de links */
-        flex-direction: column;
-        position: absolute;
-        top: 100%; /* Brota exatamente abaixo do menu fixo */
-        right: -20px; /* Alinha perfeitamente com a lateral direita */
-        width: 260px;
-        background: rgba(5, 5, 9, 0.98); /* Mantém o fundo escuro do site */
-        border-left: 2px solid var(--secondary-neon); /* Borda lateral rosa/magenta choque */
+        display: none !important; /* Esconde a lista antiga espremida por padrão */
+        flex-direction: column !important; /* Alinha os links verticalmente em lista */
+        position: absolute !important;
+        top: 100%; /* Brota exatamente abaixo da barra */
+        right: 0 !important; /* Alinha perfeitamente com a lateral direita da tela */
+        width: 200px !important; /* Largura ideal para não ocupar a tela toda */
+        background: #0c0c16 !important; /* Usa o var(--bg-card) puro para não enxergar o fundo */
+        border-left: 2px solid var(--secondary-neon); /* Borda lateral magenta choque */
         border-bottom: 2px solid var(--secondary-neon);
-        box-shadow: 0 10px 25px rgba(255, 0, 85, 0.3);
-        padding: 15px 0;
-        gap: 0;
+        box-shadow: 0 10px 25px rgba(255, 0, 85, 0.4);
+        padding: 10px 0 !important;
+        gap: 0 !important;
     }
 
     /* Classe ativa que o JavaScript vai injetar ao clicar */
     #nav-menu.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-link {
-        display: block;
-        width: 100%;
-        text-align: right;
-        padding: 15px 25px;
-        font-size: 13px;
-        border: none;
-        border-right: 4px solid transparent;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important; /* Centraliza o texto dentro do botão drop */
+        padding: 15px 20px !important;
+        font-size: 14px !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; /* Linha sutil separando os links */
     }
 
     .nav-link:hover {
-        background: rgba(255, 0, 85, 0.1);
-        color: #fff;
-        border-right-color: var(--secondary-neon);
-        box-shadow: none;
+        background: rgba(255, 0, 85, 0.15) !important;
+        color: #fff !important;
+        box-shadow: none !important;
     }
 
-    /* TERMINAL: Letras menores para caber os gastos do Caixa 2 */
+    /* TERMINAL: Letras menores para caber os gastos */
     .terminal-diario {
         font-size: 0.8rem !important;
         line-height: 1.4;
