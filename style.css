@@ -63,7 +63,7 @@ header {
     width: 100px; height: 100px;
     border: 2px dashed var(--primary-neon);
     border-radius: 50%;
-    animation: rotateBrasao 10s linear infinite; /* Corrigido espaço no nome da animação */
+    animation: rotateBrasao 10s linear infinite;
 }
 
 header h1 {
@@ -89,7 +89,7 @@ nav {
     padding: 10px 20px;
     position: sticky;
     top: 0;
-    z-index: 10000;
+    z-index: 10000; /* Z-index alto para o menu mobile flutuar sobre tudo */
     border-bottom: 1px solid #222;
 }
 
@@ -99,11 +99,11 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 
-/* O contêiner interno dos links no Computador */
+/* ID adicionada para controlar o bloco de links */
 #nav-menu {
     display: flex;
     gap: 10px;
@@ -128,7 +128,7 @@ nav {
     background: rgba(0, 242, 254, 0.1);
 }
 
-/* Elemento do Hambúrguer (Oculto no Desktop) */
+/* Ícone do menu hambúrguer (oculto no computador) */
 .menu-hamburguer {
     display: none;
     font-size: 28px;
@@ -380,7 +380,6 @@ footer {
     }
     .perfil-supremo { text-align: center; justify-items: center; }
 }
-
 /* Centraliza o conteúdo da transparência e dá altura mínima */
 .container-gabinete {
     min-height: 80vh;
@@ -430,32 +429,33 @@ footer {
         min-width: 450px;
     }
 
-    /* NAVEGAÇÃO INTERNA COM HAMBÚRGUER FLUTUANTE (Substitui o empilhamento fixo antigo) */
+    /* CORREÇÃO DO MENU RESPONSIVO: Transforma em Dropdown Absoluto */
     .nav-container {
-        justify-content: flex-end; /* Alinha o botão hambúrguer à direita */
+        flex-direction: row; /* Cancela o empilhamento antigo vertical */
+        justify-content: flex-end; /* Empurra o botão ☰ para o canto direito */
         padding: 5px 0 !important;
     }
 
     .menu-hamburguer {
-        display: block; /* Ativa o ícone ☰ no celular */
+        display: block; /* Faz o botão ☰ aparecer apenas no celular */
     }
 
     #nav-menu {
-        display: none; /* Oculta a lista de links por padrão */
+        display: none; /* Esconde a lista original de links */
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Fixa diretamente sob a barra nav */
-        right: -20px; /* Garante alinhamento com a borda da tela */
+        top: 100%; /* Brota exatamente abaixo do menu fixo */
+        right: -20px; /* Alinha perfeitamente com a lateral direita */
         width: 260px;
-        background: rgba(5, 5, 9, 0.98); /* Corresponde a --bg-dark */
-        border-left: 2px solid var(--secondary-neon);
+        background: rgba(5, 5, 9, 0.98); /* Mantém o fundo escuro do site */
+        border-left: 2px solid var(--secondary-neon); /* Borda lateral rosa/magenta choque */
         border-bottom: 2px solid var(--secondary-neon);
         box-shadow: 0 10px 25px rgba(255, 0, 85, 0.3);
         padding: 15px 0;
         gap: 0;
     }
 
-    /* Injetado via JS para abrir e fechar */
+    /* Classe ativa que o JavaScript vai injetar ao clicar */
     #nav-menu.active {
         display: flex;
     }
