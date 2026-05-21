@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA CENTRAL - Prefeitura Cyber-Zoeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="barra-fake">SISTEMA INTEGRADO DE GESTÃO AMIGÁVEL - ACESSO NÍVEL 1</div>
+
+    <header>
+        <div class="brasao-cyber">M</div>
+        <h1>PREFEITURA DE MARCOS</h1>
+        <p><i>"Nunca foi Deus sempre foi fé."</i></p>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="gabinete.html" class="nav-link">Gabinete Supremo</a>
+            <a href="#leis" class="nav-link">Constituição</a>
+            <a href="transparencia.html" class="nav-link">Transparência</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        
+        <main>
+            <section class="card-cyber news-item">
+                <span class="tag-news">ATUALIZAÇÃO DE SISTEMA</span>
+                <h2>Prefeito instala "Modo Sexta" automático</h2>
+                <p>O algoritmo agora detecta ansiedade no grupo e decreta ponto facultativo instantâneo a partir das 15h.</p>
+            </section>
+
+            <section id="leis" class="card-cyber">
+                <div class="card-title">Diretrizes do Protocolo</div>
+                <ul class="regra-list">
+                    <li class="regra-item">
+                        <div class="regra-num">01</div>
+                        <div>Proibido não deixar nada pro beta.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">02</div>
+                        <div>Proibido dedar meu bumbum o dos outros podem.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">03</div>
+                        <div>Proibido sair sem dar o número de uma loira.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">04</div>
+                        <div>Proibido jogar lol.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">05</div>
+                        <div>Proibido gays porque sou timido.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">06</div>
+                        <div>Proibido jogar lixo nos amiguinhos.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">07</div>
+                        <div>Proibido falar do pau do prefeito.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">08</div>
+                        <div>Proibido escolas.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">09</div>
+                        <div>Proibido mandar mensagem as meia noite porque o prefeito tá com a mão ocupada.</div>
+                    </li>
+                    <li class="regra-item">
+                        <div class="regra-num">10</div>
+                        <div>Proibido não ser afeminido.</div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <div class="card-cyber prefeito-quick-card">
+                <div class="foto-prefeito-frame">
+                    <img src="img/perfil.jpg" alt="Prefeito Marcos">
+                </div>
+                <div class="nome-prefeito-quick">MARCOS 6924</div>
+                <div class="cargo-prefeito-quick">Operador Principal</div>
+                <a href="gabinete.html" class="botao-cyber">Ver Perfil Completo</a>
+            </div>
+
+            <div class="card-cyber" style="border-color: var(--secondary-neon); text-align: center; margin-top: 20px;">
+                <div class="card-title" style="justify-content: center; color: var(--secondary-neon);">⏳ ALERTA DE INÉRCIA</div>
+                <div id="contador-dias" style="font-family: 'VT323'; font-size: 5rem; color: #fff; line-height: 1;">00</div>
+                <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-top: 10px;">Dias sem trabalhar</p>
+            </div>
+
+            <div class="card-cyber" style="margin-top: 20px; text-align: center;">
+                <div class="card-title" style="font-size: 0.8rem; justify-content: center;">🤝 ALIANÇAS DE PESO</div>
+                <img src="img/apoio.jpg" style="width: 100%; border-radius: 5px; border: 1px solid var(--primary-neon);">
+                <p style="font-size: 10px; color: var(--primary-neon); margin-top: 5px;">Aprovação confirmada pelo sistema!</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <script>
+        const dataUltimoTrabalho = new Date(2026, 2, 20); 
+        function atualizarContador() {
+            const agora = new Date();
+            const diferenca = agora - dataUltimoTrabalho;
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            document.getElementById('contador-dias').innerText = dias.toString().padStart(2, '0');
+        }
+        atualizarContador();
+        setInterval(atualizarContador, 1000 * 60 * 60);
+    </script>
+
+    <footer>© 2026 - TODOS OS DIREITOS RESERVADOS À ZUEIRA APLICADA</footer>
+
+</body>
+</html>
