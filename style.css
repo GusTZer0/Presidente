@@ -11,7 +11,11 @@
     --shadow-neon: 0 0 15px rgba(0, 242, 254, 0.5);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
     background-color: var(--bg-dark);
@@ -80,7 +84,11 @@ header h1 {
     animation: shine 5s linear infinite;
 }
 
-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 10px; }
+header p { 
+    color: var(--text-muted); 
+    font-size: 0.9rem; 
+    margin-top: 10px; 
+}
 
 /* --- NAV NEON --- */
 nav {
@@ -89,7 +97,7 @@ nav {
     padding: 10px 20px;
     position: sticky;
     top: 0;
-    z-index: 10000; /* Z-index alto para o menu mobile flutuar sobre tudo */
+    z-index: 10000;
     border-bottom: 1px solid #222;
 }
 
@@ -103,7 +111,6 @@ nav {
     width: 100%;
 }
 
-/* ID adicionada para controlar o bloco de links */
 #nav-menu {
     display: flex;
     gap: 10px;
@@ -128,7 +135,6 @@ nav {
     background: rgba(0, 242, 254, 0.1);
 }
 
-/* Ícone do menu hambúrguer (oculto no computador) */
 .menu-hamburguer {
     display: none;
     font-size: 28px;
@@ -149,7 +155,7 @@ nav {
     gap: 30px;
 }
 
-/* --- CARDS ZOEIRA --- */
+/* --- CARDS --- */
 .card-cyber {
     background: var(--bg-card);
     border: 1px solid #1a1a1a;
@@ -182,12 +188,25 @@ nav {
     gap: 10px;
 }
 .card-title::before {
-    content: ''; display: inline-block; width: 10px; height: 10px; background: var(--secondary-neon);
+    content: ''; 
+    display: inline-block; 
+    width: 10px; 
+    height: 10px; 
+    background: var(--secondary-neon);
 }
 
-/* Notícias e Regras */
-.news-item { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1a1a1a; }
-.tag-news { background: var(--secondary-neon); color: #fff; font-size: 10px; padding: 3px 8px; font-weight: bold; }
+.news-item { 
+    margin-bottom: 20px; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #1a1a1a; 
+}
+.tag-news { 
+    background: var(--secondary-neon); 
+    color: #fff; 
+    font-size: 10px; 
+    padding: 3px 8px; 
+    font-weight: bold; 
+}
 
 .regra-list { list-style: none; }
 .regra-item {
@@ -195,7 +214,9 @@ nav {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
-    display: flex; gap: 15px; align-items: center;
+    display: flex; 
+    gap: 15px; 
+    align-items: center;
 }
 .regra-num {
     font-family: 'VT323', monospace;
@@ -208,7 +229,8 @@ nav {
     text-align: center;
 }
 .foto-prefeito-frame {
-    width: 150px; height: 150px;
+    width: 150px; 
+    height: 150px;
     margin: 0 auto 20px;
     border-radius: 50%;
     border: 4px solid #1a1a1a;
@@ -216,13 +238,18 @@ nav {
     position: relative;
 }
 .foto-prefeito-frame::after {
-    content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+    content: ''; 
+    position: absolute; 
+    top: -5px; left: -5px; right: -5px; bottom: -5px;
     border-radius: 50%;
     border: 2px solid var(--primary-neon);
     box-shadow: var(--shadow-neon);
 }
 .foto-prefeito-frame img {
-    width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%;
 }
 
 .nome-prefeito-quick { font-family: 'Syncopate', sans-serif; font-size: 1rem; color: #fff; }
@@ -252,6 +279,10 @@ nav {
     max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .perfil-supremo {
@@ -278,15 +309,22 @@ nav {
 }
 
 .moldura-prefeito-grande {
-    width: 300px; height: 400px;
+    width: 300px; 
+    height: 400px;
     border: 2px solid var(--primary-neon);
     padding: 10px;
     background: #000;
     box-shadow: var(--shadow-neon);
     position: relative;
 }
+
+/* Correção definitiva para a foto não achatar no PC ou celular */
 .moldura-prefeito-grande img {
-    width: 100%; height: 100%; object-fit: cover;
+    width: 100% !important; 
+    height: 100% !important; 
+    object-fit: cover !important; /* Preserva a proporção original do rosto */
+    object-position: center !important;
+    display: block;
 }
 
 .info-suprema h1 {
@@ -346,8 +384,11 @@ nav {
     border: 2px solid #222;
     box-shadow: 0 0 20px rgba(79, 251, 62, 0.1);
     position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    min-height: 250px;
 }
-/* Efeito Scanline */
 .terminal-diario::after {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: repeating-linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1) 1px, transparent 1px, transparent 2px);
@@ -366,7 +407,7 @@ footer {
     letter-spacing: 2px;
 }
 
-/* --- ANIMATIONS & RESPONSIVE --- */
+/* --- ANIMATIONS --- */
 @keyframes shine {
     to { background-position: 200% center; }
 }
@@ -374,95 +415,79 @@ footer {
     to { transform: rotate(360deg); }
 }
 
+/* --- MEDIA QUERIES --- */
 @media (max-width: 900px) {
     .main-container, .perfil-supremo, .grid-vices-cyber {
         grid-template-columns: 1fr;
     }
     .perfil-supremo { text-align: center; justify-items: center; }
 }
-/* Centraliza o conteúdo da transparência e dá altura mínima */
-.container-gabinete {
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-/* Deixa o terminal mais largo e legível */
-.terminal-diario {
-    width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
-    min-height: 250px;
-}
-
-/* Ajuste no Header da transparência */
-.container-gabinete header {
-    margin-bottom: 50px;
-}
-
-/* --- REGRAS GLOBAIS PARA CELULAR --- */
-/* --- REGRAS GLOBAIS PARA CELULAR (CORRIGIDO) --- */
+/* --- REGRAS SUPREMAS PARA CELULAR (TUDO RESPONSIVO) --- */
 @media (max-width: 768px) {
     
-    /* Ajusta os containers para não colarem na borda */
     .container-gabinete, .container-home {
         width: 95% !important;
         padding: 15px !important;
         margin: 10px auto !important;
     }
 
-    /* Títulos menores para não quebrarem linha de jeito feio */
     .card-title {
         font-size: 1.4rem !important;
         text-align: center;
     }
 
-    /* TABELAS: O truque do scroll lateral */
+    /* CORREÇÃO DO BUG DA IMAGEM DO PREFEITO NO CELULAR */
+    .moldura-prefeito-grande {
+        width: 100% !important; 
+        max-width: 280px !important; /* Impede a foto de se espalhar */
+        height: 340px !important; /* Mantém uma altura proporcional humana */
+        margin: 0 auto 20px !important; /* Centraliza perfeitamente na tela */
+    }
+
+    /* TABELAS RESPONSIVAS */
     .table-responsive {
         overflow-x: auto;
         display: block;
         width: 100%;
         -webkit-overflow-scrolling: touch;
     }
-
     table {
         min-width: 450px;
     }
 
-    /* ESTRUTURA DO MENU FLUTUANTE */
+    /* SISTEMA DO MENU HAMBÚRGUER FLUTUANTE */
     nav {
         position: sticky;
         top: 0;
     }
 
     .nav-container {
-        flex-direction: row !important; /* Força os elementos na horizontal */
-        justify-content: flex-end !important; /* Empurra o botão ☰ totalmente para a direita */
+        flex-direction: row !important;
+        justify-content: flex-end !important;
         padding: 5px 0 !important;
-        position: relative; /* Serve de âncora para o menu de links */
+        position: relative;
     }
 
     .menu-hamburguer {
-        display: block !important; /* Faz o botão ☰ aparecer obrigatoriamente no celular */
+        display: block !important;
     }
 
     #nav-menu {
-        display: none !important; /* Esconde a lista antiga espremida por padrão */
-        flex-direction: column !important; /* Alinha os links verticalmente em lista */
+        display: none !important;
+        flex-direction: column !important;
         position: absolute !important;
-        top: 100%; /* Brota exatamente abaixo da barra */
-        right: 0 !important; /* Alinha perfeitamente com a lateral direita da tela */
-        width: 200px !important; /* Largura ideal para não ocupar a tela toda */
-        background: #0c0c16 !important; /* Usa o var(--bg-card) puro para não enxergar o fundo */
-        border-left: 2px solid var(--secondary-neon); /* Borda lateral magenta choque */
+        top: 100%;
+        right: 0 !important;
+        width: 200px !important;
+        background: #0c0c16 !important;
+        border-left: 2px solid var(--secondary-neon);
         border-bottom: 2px solid var(--secondary-neon);
         box-shadow: 0 10px 25px rgba(255, 0, 85, 0.4);
         padding: 10px 0 !important;
         gap: 0 !important;
     }
 
-    /* Classe ativa que o JavaScript vai injetar ao clicar */
     #nav-menu.active {
         display: flex !important;
     }
@@ -470,11 +495,11 @@ footer {
     .nav-link {
         display: block !important;
         width: 100% !important;
-        text-align: center !important; /* Centraliza o texto dentro do botão drop */
+        text-align: center !important;
         padding: 15px 20px !important;
         font-size: 14px !important;
         border: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important; /* Linha sutil separando os links */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
     }
 
     .nav-link:hover {
@@ -483,19 +508,16 @@ footer {
         box-shadow: none !important;
     }
 
-    /* TERMINAL: Letras menores para caber os gastos */
     .terminal-diario {
         font-size: 0.8rem !important;
         line-height: 1.4;
     }
 
-    /* GRÁFICO: Ajuste das barras */
     .chart-container {
         gap: 10px !important;
         height: 160px !important;
     }
 
-    /* BOTÕES: Ficam largos para facilitar o clique com o polegar */
     .botao-cyber {
         width: 100%;
         box-sizing: border-box;
